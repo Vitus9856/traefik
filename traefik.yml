@@ -1,0 +1,35 @@
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+log:
+  level: DEBUG
+accesslog:
+  filePath: /var/log/access.log
+  bufferingSize: 100
+
+api:
+  dashboard: true
+  insecure: true
+
+entryPoints:
+  http:
+    address: ":80"
+    http:
+  https:
+    address: ":443"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+  file:
+    directory: /etc/traefik/configs
+    watch: true
+
+#certificatesResolvers:
+#  myresolver:
+#    acme:
+#      email: walgrind@gmail.com
+#      storage: acme.json
+#      tlsChallenge: {}
