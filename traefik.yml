@@ -30,6 +30,6 @@ providers:
 #certificatesResolvers:
 #  myresolver:
 #    acme:
-#      email: walgrind@gmail.com
+#      email: 
 #      storage: acme.json
 #      tlsChallenge: {}
